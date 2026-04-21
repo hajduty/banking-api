@@ -1,9 +1,10 @@
 ﻿using Budget.Domain.Enums;
 using Budget.Domain.ValueObject;
+using Budget.Domain.Events;
 
 namespace Budget.Domain.Entities;
 
-public class Account
+public class Account : AggregateRoot
 {
     public int Id { get; private set; }
     public Money Balance { get; private set; }
@@ -19,6 +20,7 @@ public class Account
 
         Name = name;
         Balance = new Money(0, currencyType);
+        RaiseDomainEvent(new AccountOpened(Id, name, DateTime.UtcNow));
     }
 
     public void Deposit(Money amount)
@@ -32,6 +34,7 @@ public class Account
         _transactions.Add(transaction);
 
         Balance = new Money(Balance.Amount + amount.Amount, Balance.Currency);
+        RaiseDomainEvent(new MoneyDeposited(Id, amount, DateTime.UtcNow));
     }
 
     public void Withdraw(Money amount)
@@ -47,5 +50,6 @@ public class Account
         _transactions.Add(transaction);
 
         Balance = new Money(Balance.Amount - amount.Amount, Balance.Currency);
+        RaiseDomainEvent(new MoneyWithdrawn(Id, amount, DateTime.UtcNow));
     }
 }
