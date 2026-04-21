@@ -13,6 +13,7 @@ public class Account : AggregateRoot
     private readonly List<Transaction> _transactions = new();
     public IReadOnlyCollection<Transaction> Transactions => _transactions;
 
+    private Account() { } // For EF Core magic, something something backdoor reflection idk
     public Account(string name, CurrencyType currencyType)
     {
         if (string.IsNullOrWhiteSpace(name))

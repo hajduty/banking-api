@@ -10,7 +10,8 @@ public class Transaction
     public string? Description { get; private set; }
     public int? FromAccountId { get; private set; }
     public int? ToAccountId { get; private set; }
-    
+
+    private Transaction() { }
     public Transaction(Money amount, DateTime date, string? description = null, int? fromAccountId = null, int? toAccountId = null)
     {
         if (amount.Amount <= 0)
