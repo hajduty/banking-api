@@ -15,6 +15,8 @@ public class AppDbContext : DbContext, IUnitOfWork
     {
         modelBuilder.Entity<Account>().OwnsOne(p => p.Balance);
 
+        modelBuilder.Entity<Transaction>().OwnsOne(t => t.Amount);
+
         base.OnModelCreating(modelBuilder);
     }
 }

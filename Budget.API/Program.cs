@@ -1,8 +1,9 @@
-
+using Budget.API.Endpoints;
 using Budget.Application;
 using Budget.Infrastructure;
+using budget_api;
 
-namespace budget_api
+namespace Budget.API
 {
     public class Program
     {
@@ -21,6 +22,10 @@ namespace budget_api
             builder.Services.AddInfrastructure(builder.Configuration);
 
             var app = builder.Build();
+
+            AccountEndpoints.Map(app);
+
+            app.UseGlobalExceptionHandler();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

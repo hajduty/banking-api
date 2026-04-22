@@ -11,6 +11,7 @@ public record AccountDto
     public decimal Balance { get; init; }
     public string Currency { get; init; }
     public int TransactionCount { get; init; }
+
     public static AccountDto FromAccount(Account account) => new()
     {
         AccountId = account.Id,
