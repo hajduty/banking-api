@@ -8,16 +8,17 @@ public class AccountRepository(AppDbContext dbContext) : IAccountRepository
 {
     public async Task AddAsync(Account account)
     {
-        await dbContext.AddAsync(account);
+        await dbContext.Accounts.AddAsync(account);
     }
 
-    public Task<Account> GetByIdAsync(int id)
+    public async Task<Account?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await dbContext.Accounts.FindAsync(id);
     }
 
     public Task UpdateAsync(Account account)
     {
-        throw new NotImplementedException();
+        dbContext.Accounts.Update(account);
+        return Task.CompletedTask;
     }
 }
