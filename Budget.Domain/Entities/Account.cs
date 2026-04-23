@@ -21,7 +21,6 @@ public class Account : AggregateRoot
 
         Name = name;
         Balance = new Money(0, currencyType);
-        RaiseDomainEvent(new AccountOpened(Id, name, DateTime.UtcNow));
     }
 
     public void Deposit(Money amount)

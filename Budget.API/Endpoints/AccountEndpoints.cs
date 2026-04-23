@@ -1,4 +1,5 @@
 ﻿using Budget.API.DTOs;
+using Budget.Application.Accounts.Commands.CreateAccount;
 using Budget.Application.Accounts.Commands.DepositMoney;
 using MediatR;
 
@@ -14,6 +15,15 @@ public static class AccountEndpoints
             ISender sender) =>
         {
             var command = new DepositMoneyCommand(accountId, request.Amount, request.Currency);
+            var result = await sender.Send(command);
+            return Results.Ok(result);
+        });
+
+        app.MapPost("/accounts", async (
+            CreateAccountRequest request,
+            ISender sender) =>
+        {
+            var command = new CreateAccountCommand(request.Name, request.Currency);
             var result = await sender.Send(command);
             return Results.Ok(result);
         });

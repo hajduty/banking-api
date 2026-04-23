@@ -1,3 +1,5 @@
-﻿namespace Budget.Domain;
+﻿using MediatR;
 
-public interface IDomainEvent { }
+namespace Budget.Domain;
+
+public interface IDomainEvent : INotification { }
