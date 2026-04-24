@@ -27,7 +27,6 @@ public class AccountTests
 
     public class Deposit
     {
-
         [Fact]
         public void AccountDepositTest()
         {

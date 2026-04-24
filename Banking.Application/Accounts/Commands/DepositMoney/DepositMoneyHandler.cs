@@ -21,11 +21,6 @@ public class DepositMoneyCommandHandler(IAccountRepository accountRepository, IU
 
         await unitOfWork.SaveChangesAsync();
 
-        foreach (var domainEvent in account.DomainEvents)
-            await publisher.Publish(domainEvent, cancellationToken);
-
-        account.ClearDomainEvents();
-
         return AccountDto.FromAccount(account);
     }
 }
