@@ -1,6 +1,5 @@
 ﻿using Banking.Application.DTOs;
-using Banking.Domain.Enums;
-
+using Banking.Domain.Shared;
 using MediatR;
 
 namespace Banking.Application.Accounts.Commands.DepositMoney;

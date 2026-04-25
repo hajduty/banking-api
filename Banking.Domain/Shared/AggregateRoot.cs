@@ -1,4 +1,6 @@
-﻿namespace Banking.Domain;
+﻿using Banking.Domain.Shared;
+
+namespace Banking.Domain.Primitives;
 
 public abstract class AggregateRoot
 {

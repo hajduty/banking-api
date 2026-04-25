@@ -1,7 +1,7 @@
 ﻿using Banking.Application.DTOs;
 using Banking.Application.Exceptions;
-using Banking.Domain.Interfaces;
-using Banking.Domain.ValueObject;
+using Banking.Domain.Accounts;
+using Banking.Domain.Shared;
 using MediatR;
 
 namespace Banking.Application.Accounts.Commands.DepositMoney;

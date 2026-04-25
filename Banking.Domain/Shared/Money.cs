@@ -1,6 +1,4 @@
-﻿using Banking.Domain.Enums;
-
-namespace Banking.Domain.ValueObject;
+﻿namespace Banking.Domain.Shared;
 
 public record Money
 {

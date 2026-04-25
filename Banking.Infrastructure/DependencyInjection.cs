@@ -1,5 +1,4 @@
 ﻿using Banking.Application;
-using Banking.Domain.Interfaces;
 using Banking.Infrastructure.Behaviors;
 using Banking.Infrastructure.Data;
 using Banking.Infrastructure.Repositories;
@@ -7,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
+using Banking.Domain.Accounts;
 
 namespace Banking.Infrastructure;
 

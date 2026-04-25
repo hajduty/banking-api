@@ -1,4 +1,5 @@
 ﻿using Banking.Application;
+using Banking.Domain.Accounts;
 using Banking.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 

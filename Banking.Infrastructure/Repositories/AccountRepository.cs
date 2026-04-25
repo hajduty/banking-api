@@ -1,5 +1,4 @@
-﻿using Banking.Domain.Entities;
-using Banking.Domain.Interfaces;
+﻿using Banking.Domain.Accounts;
 using Banking.Infrastructure.Data;
 
 namespace Banking.Infrastructure.Repositories;

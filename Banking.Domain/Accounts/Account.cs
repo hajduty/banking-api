@@ -1,8 +1,10 @@
-﻿using Banking.Domain.Enums;
-using Banking.Domain.ValueObject;
-using Banking.Domain.Events;
+﻿using System.ComponentModel.DataAnnotations;
+using Banking.Domain.Primitives;
+using Banking.Domain.Entities;
+using Banking.Domain.Shared;
+using Banking.Domain.Accounts.Events;
 
-namespace Banking.Domain.Entities;
+namespace Banking.Domain.Accounts;
 
 public class Account : AggregateRoot
 {
@@ -12,6 +14,9 @@ public class Account : AggregateRoot
 
     private readonly List<Transaction> _transactions = new();
     public IReadOnlyCollection<Transaction> Transactions => _transactions;
+
+    [Timestamp]
+    public byte[] RowVersion {  get; private set; }
 
     private Account() { } // For EF Core magic, something something backdoor reflection idk
     public Account(string name, CurrencyType currencyType)

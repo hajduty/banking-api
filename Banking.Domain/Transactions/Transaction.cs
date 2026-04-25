@@ -1,4 +1,4 @@
-﻿using Banking.Domain.ValueObject;
+﻿using Banking.Domain.Shared;
 
 namespace Banking.Domain.Entities;
 

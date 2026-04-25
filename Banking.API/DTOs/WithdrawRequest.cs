@@ -1,4 +1,4 @@
-﻿using Banking.Domain.Enums;
+﻿using Banking.Domain.Shared;
 
 namespace Budget.API.DTOs;
 

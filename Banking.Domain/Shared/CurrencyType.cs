@@ -1,4 +1,4 @@
-﻿namespace Banking.Domain.Enums;
+﻿namespace Banking.Domain.Shared;
 
 public enum CurrencyType
 {

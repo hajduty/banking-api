@@ -1,7 +1,6 @@
-using Banking.Domain.Entities;
-using Banking.Domain.Enums;
-using Banking.Domain.Events;
-using Banking.Domain.ValueObject;
+using Banking.Domain.Accounts;
+using Banking.Domain.Accounts.Events;
+using Banking.Domain.Shared;
 
 namespace Banking.Tests.Domain;
 
@@ -24,7 +23,7 @@ public class AccountTests
             Assert.NotNull(account);
         }
     }
-
+    
     public class Deposit
     {
         [Fact]
@@ -60,7 +59,6 @@ public class AccountTests
 
     public class Withdraw
     {
-
         [Fact]
         public void AccountWithdrawTest()
         {

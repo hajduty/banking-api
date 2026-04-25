@@ -15,6 +15,7 @@ public static class ExceptionHandling
                 var (statusCode, message) = exception switch
                 {
                     AccountNotFoundException => (StatusCodes.Status404NotFound, exception.Message),
+                    ConcurrencyException => (StatusCodes.Status409Conflict, exception.Message),
                     _ => (StatusCodes.Status500InternalServerError, "An unexpected error occurred.")
                 };
 

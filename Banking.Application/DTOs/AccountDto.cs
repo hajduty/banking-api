@@ -1,5 +1,4 @@
-﻿using Banking.Domain.Entities;
-using Banking.Domain.ValueObject;
+﻿using Banking.Domain.Accounts;
 
 namespace Banking.Application.DTOs;
 

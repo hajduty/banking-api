@@ -1,7 +1,6 @@
 ﻿using Banking.Application.DTOs;
-using Banking.Domain.Entities;
-using Banking.Domain.Events;
-using Banking.Domain.Interfaces;
+using Banking.Domain.Accounts;
+using Banking.Domain.Accounts.Events;
 using MediatR;
 
 namespace Banking.Application.Accounts.Commands.CreateAccount;

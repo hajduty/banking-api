@@ -1,4 +1,5 @@
-﻿using Banking.Domain;
+﻿using Banking.Domain.Primitives;
+using Banking.Domain.Shared;
 using Banking.Infrastructure.Data;
 using MediatR;
 

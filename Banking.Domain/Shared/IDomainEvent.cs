@@ -1,5 +1,5 @@
 ﻿using MediatR;
 
-namespace Banking.Domain;
+namespace Banking.Domain.Shared;
 
 public interface IDomainEvent : INotification { }
